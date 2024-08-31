@@ -1,5 +1,5 @@
 import java.util.*;
-interface AirIndiaService
+interface MalayaService
 {
 	public List<Flight>getFlights();
 }

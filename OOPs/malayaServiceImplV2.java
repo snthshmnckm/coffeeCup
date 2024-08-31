@@ -1,5 +1,5 @@
 import java.util.*;
-class  AirIndiaServiceImplV2 implements AirIndiaService
+class  MalayaServiceImplV2 implements MalayaService
 {
 	public List<Flight>getFlights()
 	{

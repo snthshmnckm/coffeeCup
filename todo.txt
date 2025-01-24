@@ -1,0 +1,11 @@
+dead code ?
+    if condition la oru condition 10 > 5 nu direct iruku and ithuku oru else iruku na antha else ku logic ah velaiye illa so That else part is Dead Code
+
+TODO ArrayList
+XXX
+FIXME
+HACK
+BUG 
+[ ]
+[x]
+

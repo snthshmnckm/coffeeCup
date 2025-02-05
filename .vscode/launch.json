@@ -1,0 +1,371 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CuntDigits",
+            "request": "launch",
+            "mainClass": "CoffeeBeans.CuntDigits",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Attach",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": "<debug port of the debuggee>"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "AddElements",
+            "request": "launch",
+            "mainClass": "AddElements",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "AlphaIpyramid",
+            "request": "launch",
+            "mainClass": "AlphaIpyramid",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "AlphaPattern",
+            "request": "launch",
+            "mainClass": "AlphaPattern",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "AlphaPyramid",
+            "request": "launch",
+            "mainClass": "AlphaPyramid",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "AplaPattern",
+            "request": "launch",
+            "mainClass": "AplaPattern",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "BinaryPattern",
+            "request": "launch",
+            "mainClass": "BinaryPattern",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "BufferedReader",
+            "request": "launch",
+            "mainClass": "BufferedReader",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Butterfly",
+            "request": "launch",
+            "mainClass": "Butterfly",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Child3",
+            "request": "launch",
+            "mainClass": "Child3",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "CmdLineArgs",
+            "request": "launch",
+            "mainClass": "CmdLineArgs",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Diamond",
+            "request": "launch",
+            "mainClass": "Diamond",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Factorial",
+            "request": "launch",
+            "mainClass": "Factorial",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Fibanocci",
+            "request": "launch",
+            "mainClass": "Fibanocci",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "FileReader",
+            "request": "launch",
+            "mainClass": "FileReader",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "GoibiboClient",
+            "request": "launch",
+            "mainClass": "GoibiboClient",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Hollow",
+            "request": "launch",
+            "mainClass": "Hollow",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "InputStream",
+            "request": "launch",
+            "mainClass": "InputStream",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Jcode1",
+            "request": "launch",
+            "mainClass": "Jcode1",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Jstack",
+            "request": "launch",
+            "mainClass": "Jstack",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Jswitch",
+            "request": "launch",
+            "mainClass": "Jswitch",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Lastdigit",
+            "request": "launch",
+            "mainClass": "Lastdigit",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Linkedlist2",
+            "request": "launch",
+            "mainClass": "Linkedlist2",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Literal",
+            "request": "launch",
+            "mainClass": "Literal",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Nestedif",
+            "request": "launch",
+            "mainClass": "Nestedif",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "NoPattern",
+            "request": "launch",
+            "mainClass": "NoPattern",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "NumberPattern",
+            "request": "launch",
+            "mainClass": "NumberPattern",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "OBjects",
+            "request": "launch",
+            "mainClass": "OBjects",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Object",
+            "request": "launch",
+            "mainClass": "Object",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Parent3",
+            "request": "launch",
+            "mainClass": "Parent3",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Pattern1",
+            "request": "launch",
+            "mainClass": "Pattern1",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Pattern2",
+            "request": "launch",
+            "mainClass": "Pattern2",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Pattern3",
+            "request": "launch",
+            "mainClass": "Pattern3",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Runner",
+            "request": "launch",
+            "mainClass": "Runner",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Sample",
+            "request": "launch",
+            "mainClass": "Sample",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Scan",
+            "request": "launch",
+            "mainClass": "Scan",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "StaticControlFlow",
+            "request": "launch",
+            "mainClass": "StaticControlFlow",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "StringBuff",
+            "request": "launch",
+            "mainClass": "StringBuff",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Testing",
+            "request": "launch",
+            "mainClass": "Testing",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Tokenizing",
+            "request": "launch",
+            "mainClass": "Tokenizing",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "Triangle",
+            "request": "launch",
+            "mainClass": "Triangle",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "VPatter",
+            "request": "launch",
+            "mainClass": "VPatter",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "VarArg",
+            "request": "launch",
+            "mainClass": "VarArg",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "VarArg2",
+            "request": "launch",
+            "mainClass": "VarArg2",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "appendArrays",
+            "request": "launch",
+            "mainClass": "appendArrays",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "arrList",
+            "request": "launch",
+            "mainClass": "arrList",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "CountDigits",
+            "request": "launch",
+            "mainClass": "coffeebeans.CountDigits",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "methodOverloading",
+            "request": "launch",
+            "mainClass": "methodOverloading",
+            "projectName": "Coffee_b24a66c5"
+        }
+    ]
+}

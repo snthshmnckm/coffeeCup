@@ -1,0 +1,2060 @@
+1.prime no in array
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    int n;
+
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        if (scanf("%d", &arr[i]) != 1) {
+            printf("Invalid input\n");
+            return 0;
+        }
+    }
+
+   for(int i=0;i<n;i++){
+       bool isPrime=true;
+       
+       if(arr[i]<=1){
+           isPrime=false;
+       }
+       else{
+       for(int j=2;j*j<=arr[i];j++){
+           if(arr[i]%j==0){
+               isPrime=false;
+               break;
+           }
+       }
+   }
+   if(isPrime){
+       printf("%d ",arr[i]);
+   }
+}
+}
+
+
+
+2.Median of a array
+
+
+
+#include <stdio.h>
+
+int main() {
+    int i,n;
+
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        if (scanf("%d", &arr[i]) != 1) {
+            printf("Invalid input\n");
+            return 0;
+        }
+    }
+
+    // Sorting the array
+  for(i=0;i<n-1;i++){
+      for(int j=i+1;j<n;j++){
+          if(arr[i]>arr[j]){
+              int temp=arr[i];
+              arr[i]=arr[j];
+              arr[j]=temp;
+          }
+      }
+  }
+   for(i=0;i<n;i++){
+       printf("%d ",arr[i]);
+}
+    double median;
+    
+    if(n%2==0){
+        median=(arr[n/2-1]+arr[n/2])/2.0;
+    }
+    else{
+        median=arr[n/2];
+    }
+    printf("\n%.2f",median);
+}
+
+
+
+3.Average of array
+
+#include <stdio.h>
+
+int main() {
+    int i,n;
+    double sum=0;
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        if (scanf("%d", &arr[i]) != 1) {
+            printf("Invalid input\n");
+            return 0;
+        }
+    }
+
+    // Sorting the array
+  for(i=0;i<n;i++){
+     sum=sum+arr[i];
+}
+    double ave;
+    
+    ave=sum/n;
+    
+    printf("%.2f",ave);
+}
+
+
+
+4.Adding two matrices
+
+
+#include <stdio.h>
+
+int main() {
+    int m, n;
+
+   
+    scanf("%d %d", &m, &n);
+
+
+    int matrix1[m][n], matrix2[m][n], sum[m][n];
+
+    
+   
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+ 
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            sum[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+
+    
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", sum[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+5.Sub of two matrix
+
+#include <stdio.h>
+
+int main() {
+    int m, n;
+
+   
+    scanf("%d %d", &m, &n);
+
+
+    int matrix1[m][n], matrix2[m][n], diff[m][n];
+
+    
+   
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+ 
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            diff[i][j] = matrix1[i][j] - matrix2[i][j];
+        }
+    }
+
+    
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", diff[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+
+6. Multiply of two matrix
+
+
+#include <stdio.h>
+
+int main() {
+    int m, n, p, q;
+
+    // Get the size of the first matrix
+    printf("Enter the number of rows and columns of the first matrix: ");
+    scanf("%d %d", &m, &n);
+
+    // Get the size of the second matrix
+    printf("Enter the number of rows and columns of the second matrix: ");
+    scanf("%d %d", &p, &q);
+
+    // Ensure the matrices can be multiplied (columns in first = rows in second)
+    if (n != p) {
+        printf("Matrices cannot be multiplied\n");
+        return 0;
+    }
+
+    int matrix1[m][n], matrix2[p][q], product[m][q];
+
+    // Initialize the product matrix to zero
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < q; j++) {
+            product[i][j] = 0;
+        }
+    }
+
+    // Input elements for the first matrix
+    printf("Enter elements of the first matrix:\n");
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+
+    // Input elements for the second matrix
+    printf("Enter elements of the second matrix:\n");
+    for (int i = 0; i < p; i++) {
+        for (int j = 0; j < q; j++) {
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+
+    // Multiply the matrices
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < q; j++) {
+            for (int k = 0; k < n; k++) {
+                product[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
+    }
+
+    // Print the product matrix
+    printf("Product of the matrices:\n");
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < q; j++) {
+            printf("%d ", product[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+7.Scalar multiplication
+
+/**
+ * C program to perform scalar matrix multiplication
+ */
+ 
+#include <stdio.h>
+
+#define SIZE 3 // Maximum size of the array
+
+int main()
+{
+    int A[SIZE][SIZE]; 
+    int num, row, col;
+
+    /* Input elements in matrix from user */
+    printf("Enter elements in matrix of size %dx%d: \n", SIZE, SIZE);
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            scanf("%d", &A[row][col]);
+        }
+    }
+
+    /* Input multiplier from user */
+    printf("Enter any number to multiply with matrix A: ");
+    scanf("%d", &num);
+
+    /* Perform scalar multiplication of matrix */
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            /* (cAij) = c . Aij */
+            A[row][col] = num * A[row][col];
+        }
+    }
+
+    /* Print result of scalar multiplication of matrix */
+    printf("\nResultant matrix c.A = \n");
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            printf("%d ", A[row][col]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+8. matrices equal are not
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    int m, n;
+
+    // Get the size of the matrices
+    printf("Enter the number of rows and columns of the matrices: ");
+    scanf("%d %d", &m, &n);
+
+    int matrix1[m][n], matrix2[m][n];
+
+    // Input elements for the first matrix
+    printf("Enter elements of the first matrix:\n");
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+
+    // Input elements for the second matrix
+    printf("Enter elements of the second matrix:\n");
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+
+    bool isEqual=true;
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if(matrix1[i][j]!=matrix2[i][j]){
+                isEqual=false;
+                break;
+            }
+        }
+        if(!isEqual){
+            break;
+        }
+}
+
+if(isEqual){
+    printf("The matrices are equal");
+}
+else{
+    printf("The matrices are not equal");
+}
+   
+    return 0;
+}
+
+
+
+9.duplicate count
+
+
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int d_co=0;
+    
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(arr[i]==arr[j]){
+            d_co++;
+        }
+    }
+}
+d_co=d_co - 1 ;
+printf("%d",d_co);
+  
+   
+
+    return 0;
+}
+
+
+10.replace the peak number by adding it neighbour elements (example:- input: 1 2 
+4 3 output: 1 2 9 3 ) 
+
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int i,j,n;
+    
+    scanf("%d",&n);
+    
+    int arr[n];
+    
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    if(arr[0]>=arr[1]){
+        arr[0]=arr[0]+arr[1];
+    }
+    
+    for(i=1;i<n-1;i++){
+        if(arr[i]>=arr[i-1]&&arr[i]>=arr[i+1]){
+            arr[i]=arr[i]+arr[i-1]+arr[i+1];
+        }
+    }
+    
+    if(arr[n-1]>=arr[n-2]){
+        arr[n-1]=arr[n-1]+arr[n-2];
+    }
+    
+    
+    for(i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    
+}
+
+
+11.Removing first occurence of a given number from an array
+
+
+#include <stdio.h>
+
+int main() {
+    int n, num_to_remove;
+
+    // Get the size of the array
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Input elements for the array
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Get the number to remove
+    printf("Enter the number to remove: ");
+    scanf("%d", &num_to_remove);
+	
+     int found=0;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == num_to_remove) {
+            found = 1;
+            // Shift elements to the left to remove the element
+            for (int j = i; j < n - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            n--; // Decrease the size of the array
+            break; // Break to ensure only the first occurrence is removed
+        }
+    }
+
+    if (!found) {
+        printf("Number not found in the array.\n");
+    } else {
+        // Print the updated array
+        printf("Updated array after removing the first occurrence of %d:\n", num_to_remove);
+        for (int i = 0; i < n; i++) {
+            printf("%d ", arr[i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+														
+12.deletion of duplicate elements in array
+
+
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    // Get the size of the array
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Input elements for the array
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Remove duplicate elements
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] == arr[j]) {
+                // Shift elements to the left to remove the duplicate
+                for (int k = j; k < n - 1; k++) {
+                    arr[k] = arr[k + 1];
+                }
+                n--; // Decrease the size of the array
+                j--; // Adjust the index to check the next element
+            }
+        }
+    }
+
+    // Print the updated array
+    printf("Updated array without duplicates:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+
+13.Unique elements in array
+
+#include <stdio.h>
+
+
+int main() {
+    int n,sum=0;
+
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        if (scanf("%d", &arr[i]) != 1) {
+            printf("Invalid input\n");
+            return 0;
+        }
+    }
+    
+    for(int i=0;i<n;i++){
+        int uni=1;
+        for(int j=0;j<n;j++){
+            if(i!=j && arr[i]==arr[j]){
+                uni=0;
+                break;
+            }
+        }
+        if(uni){
+            printf("%d ",arr[i]);
+        }
+    }
+    
+    
+    
+}
+
+
+14.sort the array in ascending 
+
+
+#include<stdio.h>
+int main(){
+    int i,j,n,temp;
+    
+   
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+   
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(arr[i]>arr[j]){
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            }
+        }
+       
+    }
+    for(i=0;i<n;i++){
+         printf("%d ",arr[i]);
+   }
+}
+
+
+15.sort the array in descending
+
+
+ #include<stdio.h>
+int main(){
+    int i,j,n,temp;
+    
+   
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+   
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(arr[i]<arr[j]){
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            }
+        }
+       
+    }
+    for(i=0;i<n;i++){
+         printf("%d ",arr[i]);
+   }
+}
+
+
+16.Array sum close to zero
+
+
+#include<stdio.h>
+#include<limits.h>
+#include<stdlib.h>
+int main(){
+    int i,j,n;
+    
+   
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++) 
+    {
+        scanf("%d",&arr[i]);
+    }
+    
+    int closesum=INT_MAX;
+    int ele1=0,ele2=0;
+    int sum=0;
+   
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            sum=arr[i]+arr[j];
+            if(abs(sum)<abs(closesum)){
+            closesum=sum;
+            ele1=arr[i];
+            ele2=arr[j];
+            }
+        }
+       
+    }             
+    printf("[%d,%d]",ele1,ele2);
+}
+
+17.Find the count of repeated elements in array 
+
+
+#include<stdio.h>
+#include<limits.h>
+#include<stdlib.h>
+int main(){
+    int i,j,n;
+    
+   
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++) 
+    {
+        scanf("%d",&arr[i]);
+    }
+    
+    int count=0;
+    
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(arr[i]==arr[j]){
+                count++;
+                break;
+            }
+        }
+    }
+    printf("%d",count);
+    
+}
+
+
+18.Sort the array in ascending order and print even numbers first and odd numbers 
+
+#include<stdio.h>
+#include<limits.h>
+#include<stdlib.h>
+int main(){
+    int i,j,n;
+    
+   
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++) 
+    {
+        scanf("%d",&arr[i]);
+    }
+    
+   for(i=0;i<n-1;i++){
+       for(j=i+1;j<n;j++){
+           if(arr[i]>arr[j]){
+           int temp=arr[i];
+           arr[i]=arr[j];
+           arr[j]=temp;
+           }
+       }
+       
+   }
+   for(i=0;i<n;i++){
+   printf("%d ",arr[i]);
+}
+printf("\n");
+    for(i=0;i<n;i++){
+        if(arr[i]%2==0){
+            printf("%d ",arr[i]);
+        }
+    }
+    
+    for(i=0;i<n;i++){
+        if(arr[i]%2!=0){
+            printf("%d ",arr[i]);
+        }
+    }
+
+    printf("\n");
+
+
+}
+
+
+19.last repeated element
+
+
+#include <stdio.h>
+
+int main() {
+    int n, i, j, lastRepeated = 0;
+
+    // Get the size of the array
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n];
+
+    // Input elements for the array
+    printf("Enter the elements of the array:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(arr[i]==arr[j]){
+                lastRepeated=arr[i];
+            }
+        }
+    }
+    
+    if(lastRepeated!=0){
+        printf("%d",lastRepeated);
+    }
+    else{
+        printf("No");
+    }
+    return 0;
+}
+
+20.c code to add element at the end of an array
+
+
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    // Get the size of the array
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n];
+
+    // Input elements for the array
+    printf("Enter the elements of the array:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    int newele;
+    scanf("%d",&newele);
+
+    arr[n]=newele;
+    n++;
+    
+    for(i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+       
+    return 0;
+}
+
+
+21.c code to add the element at a specified position 
+
+
+#include <stdio.h>
+
+int main() {
+    int n, element, position, i;
+
+    // Get the size of the array
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n]; // Create an array with one extra space for the new element
+
+    // Input elements for the array
+    printf("Enter the elements of the array:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Get the new element and the specified position
+    printf("Enter the element to be inserted: ");
+    scanf("%d", &element);
+    printf("Enter the position where the element should be inserted: ");
+    scanf("%d", &position);
+
+    // Insert the new element at the specified position
+    for (i = n; i >= position; i--) {
+        arr[i] = arr[i - 1]; // Shift elements to the right
+    }
+    arr[position - 1] = element; // Insert the new element
+    n++;
+    // Print the updated array
+    printf("Updated array:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+22.find second least element in the array
+
+
+
+#include <stdio.h>
+#include<stdlib.h>
+#include<limits.h>
+
+int main() {
+    int i,j,n;
+    
+    scanf("%d",&n);
+    
+    int arr[n];
+    
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    int first,sec;
+    
+    first=sec=INT_MAX;
+    
+    for(i=0;i<n;i++){
+        if(arr[i]<first){
+            sec=first;
+            first=arr[i];
+        }
+        else if(arr[i]!=first && arr[i]<sec)
+        {
+            sec=arr[i];
+        }
+        
+}
+    printf("%d",sec);
+    
+}
+
+
+23.Best time to sell stock
+
+# include<stdio.h>
+int main(){
+    int n,i;
+    printf("Enter the number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the elements of array: ");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    int min=arr[0],maxpro=0,pro;
+    
+    
+    for(i=1;i<n;i++){
+        if(arr[i]<min){
+            min=arr[i];
+        }
+        else{
+            pro=arr[i]-min;
+            if(pro>maxpro){
+                maxpro=pro;
+            }
+        }
+    }
+    
+    if(maxpro<2){
+        printf("Invalid");
+    }
+    else{
+        printf("%d",maxpro);
+    }
+    
+    return 0;
+}
+
+
+24.Merge array in ascending order
+
+
+# include<stdio.h>
+int main(){
+    int n,i,j;
+    printf("Enter the number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the elements of array: ");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    int arr1[n];
+    
+    for(i=0;i<n;i++){
+        scanf("%d",&arr1[i]);
+    }
+    
+    int n1=2*n;
+    
+    int array[n1];
+    
+    for(i=0;i<n;i++){
+        array[i]=arr[i];
+    }
+    
+    for(i=n;i<n1;i++){
+        array[i]=arr1[i-n];
+        
+    }
+    
+    
+    for(i=0;i<n1;i++){
+        printf("%d ",array[i]);
+    }
+    printf("\n");
+    int temp;
+    
+    for(i=0;i<n1-1;i++){
+        for(j=i+1;j<n1;j++){
+            if(array[i]>array[j]){
+                
+            temp=array[i];
+            array[i]=array[j];
+            array[j]=temp;
+        }
+    }
+    }
+    for(i=0;i<n1;i++){
+          printf("%d ",array[i]);
+    }
+    
+}
+    
+    
+25.Even or Odd divisible
+
+# include<stdio.h>
+int main(){
+    int n,i,j;
+    printf("Enter the number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the elements of array: ");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    int count1=0;
+    int count2=0;
+    
+  for(i=0;i<n;i++){
+     if(arr[i]%2==0){
+         count1++;
+     }
+     else{
+         count2++;
+     }
+  }
+  
+  if(count1>count2){
+      printf("Even Divisible");
+  }
+  else if(count2>count1){
+      printf("Odd Divisible");
+  }
+  else{
+      printf("either even or odd");
+  }
+    
+}
+    
+    
+26.Leader array
+
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter the elements of array: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+
+    printf("Leaders in the array are: ");
+    for (i = 0; i < n; i++) {
+        lead = 1;
+        for (j = i + 1; j < n; j++) {
+            if (arr[i] <= arr[j]) {
+                lead = 0;
+                break;
+            }
+        }
+        if (lead) {
+            printf("%d ", arr[i]);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
+    
+    
+27.Square of the duplicate elements
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+   
+    int arr[n];
+    int arr1[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        arr1[i] = arr[i];
+    }
+   
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] != -1 && arr[i] == arr[j]) {
+                arr1[i] = arr[i] * arr[i];
+                arr1[j] = arr[j] * arr[j];
+                arr[j] = -1;
+            }
+        }
+    }
+   
+    printf("Array after squaring duplicates: ");
+    for (int i = 0; i < n; i++) {
+            printf("%d ", arr1[i]);
+   
+    }
+
+    return 0;
+}
+ 
+    
+28.Squaring the prime no
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    int n;
+
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        if (scanf("%d", &arr[i]) != 1) {
+            printf("Invalid input\n");
+            return 0;
+        }
+    }
+ 
+   for(int i=0;i<n;i++){
+    
+         bool isPrime=true;
+       if(arr[i]<=1){
+           isPrime=false;
+       }
+       else{
+       for(int j=2;j*j<=arr[i];j++){
+           if(arr[i]%j==0){
+               isPrime=false;
+               break;
+           }
+       }
+   }
+   if(isPrime){
+       arr[i]=arr[i]*arr[i];
+   }
+}
+
+    for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+}
+
+
+
+29.Max Occurance
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int i,j,n,n1,temp;
+    
+    scanf("%d",&n);
+    
+    int arr[n];
+    
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    int maxcount=0,maxele=0;
+    
+    
+    for(i=0;i<n;i++){
+        int count=0;
+        for(j=0;j<n;j++){
+            if(arr[i]==arr[j]){
+                count++;
+            }
+            // printf("%d\n",count);
+            
+        }
+        if(count>maxcount&&arr[i]>maxele){
+            maxcount=count;
+            maxele=arr[i];
+        }
+            
+    }
+            
+
+        printf("%d ",maxele);
+    
+ }  
+    
+
+
+30.access even index , if the index is even delete it ,if odd print it
+
+
+#include <stdio.h>
+
+int main() {
+    int i,n;
+    double sum=0;
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        if (scanf("%d", &arr[i]) != 1) {
+            printf("Invalid input\n");
+            return 0;
+        }
+    }
+
+    // Sorting the array
+  for(i=0;i<n;i++){
+     if(i%2==0&&arr[i]%2==0){
+         continue;
+     }
+     else{
+         printf("%d",arr[i]);
+     }
+}
+   
+}
+
+31.Prime no deletion
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    int n;
+
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        if (scanf("%d", &arr[i]) != 1) {
+            printf("Invalid input\n");
+            return 0;
+        }
+    }
+
+   for(int i=0;i<n;i++){
+       bool isPrime=true;
+       
+       if(arr[i]<=1){
+           isPrime=false;
+       }
+       else{
+       for(int j=2;j*j<=arr[i];j++){
+           if(arr[i]%j==0){
+               isPrime=false;
+               break;
+           }
+       }
+   }
+   if(isPrime){
+       continue;
+   }
+   else{
+       printf("%d ",arr[i]);
+   }
+}
+}
+ 
+
+32.Count no of one in matrix
+
+#include <stdio.h>
+
+#define SIZE 3 // Maximum size of the array
+
+int main()
+{
+    int A[SIZE][SIZE]; 
+    int num, row, col;
+
+    /* Input elements in matrix from user */
+    printf("Enter elements in matrix of size %dx%d: \n", SIZE, SIZE);
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            scanf("%d", &A[row][col]);
+        }
+    }
+    
+    int count=0;
+     
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            if(A[row][col]==1){
+                count++;
+            }
+        }
+    }
+
+   printf("%d",count);
+    return 0;
+}
+
+
+33.count no of even no in matrix
+
+#include <stdio.h>
+
+#define SIZE 3 // Maximum size of the array
+
+int main()
+{
+    int A[SIZE][SIZE]; 
+    int num, row, col;
+
+    /* Input elements in matrix from user */
+    printf("Enter elements in matrix of size %dx%d: \n", SIZE, SIZE);
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            scanf("%d", &A[row][col]);
+        }
+    }
+    
+    int count=0;
+     
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            if(A[row][col]%2==0){
+                count++;
+            }
+        }
+    }
+
+   printf("%d",count);
+    return 0;
+}
+
+
+34.find the index of the inserted target element in array
+
+#include <stdio.h>
+#include <stdlib.h>
+#include<limits.h>
+int main() {
+    int n,i,j;
+
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        if (scanf("%d", &arr[i]) != 1) {
+            printf("Invalid input\n");
+            return 0;
+        }
+    }
+    
+    int num;
+    
+    scanf("%d",&num);
+    
+    
+    for(i=0;i<n;i++){
+        if(num==arr[i]){
+            printf("%d\n",i);
+        }
+    }
+    
+}
+   
+
+   
+35.Ranking of elements in array
+
+#include<stdio.h>
+int main(){
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d",&n);
+    int arr[n],res[n];
+    printf("Enter the elements of array: ");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+        res[i]=1;
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(arr[i]<arr[j]){
+                res[i]++;
+            }
+        }
+    }
+    printf("Result: ");
+    for(int i=0;i<n;i++){
+        printf("\n%d %d",arr[i],res[i]);
+    }
+    return 0;
+}   
+   
+   
+36.consecutive ranges
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    int i = 0;
+    
+    while (i < n) {
+        printf("%d", arr[i]);
+        int j = i;
+        while (j < n - 1 && arr[j] + 1 == arr[j + 1]) {
+            j++;
+        }
+        if (j != i) {
+            printf("->%d", arr[j]);
+            i = j + 1;
+        } else {
+            i++;
+        }
+        if (i < n) {
+            printf(",");
+        }
+    }
+    
+    return 0;
+}
+   
+   
+37.Nearest smaller and Larger for target number
+
+#include <stdio.h>
+#include <limits.h>
+
+int main() {
+    int n, target;
+    
+    // Input array size
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+    
+    int arr[n];
+    
+    // Input array elements
+    printf("Enter array elements: ");
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    // Input target number
+    printf("Enter target number: ");
+    scanf("%d", &target);
+    
+    // Initialize nearest elements with extreme values
+    int nearestSmaller = INT_MIN;
+    int nearestLarger = INT_MAX;
+    
+    // Find nearest smaller and larger elements
+    for(int i = 0; i < n; i++) {
+        // Update nearest smaller
+        if(arr[i] < target && arr[i] > nearestSmaller) {
+            nearestSmaller = arr[i];
+        }
+        
+        // Update nearest larger
+        if(arr[i] > target && arr[i] < nearestLarger) {
+            nearestLarger = arr[i];
+        }
+    }
+    
+    // Print results
+    if(nearestSmaller == INT_MIN) {
+        printf("No smaller element found\n");
+    } else {
+        printf("Nearest smaller element: %d\n", nearestSmaller);
+    }
+    
+    if(nearestLarger == INT_MAX) {
+        printf("No larger element found\n");
+    } else {
+        printf("Nearest larger element: %d\n", nearestLarger);
+    }
+    
+    return 0;
+}
+   
+   
+
+
+38.Arrange leader elements in ascending order
+
+#include<stdio.h>
+#include<limits.h>
+#include<stdlib.h>
+int main(){
+    int i,j,n,temp;
+    
+   
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++) 
+    {
+        scanf("%d",&arr[i]);
+    }
+    
+    int count=0;
+    int arr1[n];
+    
+  
+    
+    for(i=0;i<n;i++){
+          int lead=1;
+        for(j=i+1;j<n;j++){
+            if(arr[i]<=arr[j]){
+                lead=0;
+                break;
+            }
+        }
+        if(lead){
+            arr1[count++]=arr[i];
+        }
+    }
+    
+    
+   for(i=0;i<count-1;i++)
+    {
+        for(j=i+1;j<count;j++)
+        {
+            if(arr1[i]>arr1[j]){
+            temp=arr1[i];
+            arr1[i]=arr1[j];
+            arr1[j]=temp;
+            }
+        }
+       
+    }
+    for(i=0;i<count;i++){
+         printf("%d ",arr1[i]);
+   }
+
+    
+    
+}
+
+
+39.Counting the frequency of prime no
+
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    int n;
+
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        if (scanf("%d", &arr[i]) ) {
+            if(arr[i]<0){
+            printf("Invalid input\n");
+            return 0;
+        }
+    }}
+
+    int primecount[1000]={0}; // assuming no number is greater than 999
+
+    // Check each element if it is prime and count the frequency
+    for (int i = 0; i < n; i++) {
+        bool isPrime = true;
+
+        if (arr[i] <= 1) {
+            isPrime = false;
+        } else {
+            for (int j = 2; j * j <= arr[i]; j++) {
+                if (arr[i] % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            primecount[arr[i]]++;
+        }
+    }
+    
+    
+    for(int i=0;i<1000;i++){
+        if(primecount[i]>0){
+            printf("%d %d\n",i,primecount[i]);
+        }
+    }
+    
+
+    return 0;
+}
+
+40.array swappig
+
+#include <stdio.h>
+
+int main() {
+    int n, pos1, pos2, temp;
+
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Get the elements of the array
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int temp1 = arr[0];
+    int temp2 = arr[1];
+    arr[0] = arr[n-2];
+    arr[1] = arr[n-1];
+    arr[n-1] = temp2;
+    arr[n-2] = temp1;
+    
+    
+    // Print the array after swapping
+    printf("Array after swapping: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+41.print array in reverse using swapping
+
+#include <stdio.h>
+
+int main() {
+    int i,n, pos1, pos2, temp;
+
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Get the elements of the array
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    int start = 0;                                  
+    int end = n - 1;
+    
+    while(start <= end){
+        int temp = arr[start];
+        arr[start]= arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+  
+    
+    
+    // Print the array after swapping
+    printf("Array after swapping: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+41.print array in reverse using swapping 
+
+		//////////////// (ALTER)//////////////
+
+
+#include <stdio.h>
+
+int main() {
+    int i,n, pos1, pos2, temp;
+
+    // Get the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Get the elements of the array
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // int temp1 = arr[0];
+    // int temp2 = arr[1];
+    // arr[0] = arr[n-1];
+    // arr[1] = arr[n-2];
+    // arr[n-1] = temp1;
+    // arr[n-2] = temp2;
+    
+    for(i=0;i<n/2;i++){
+            int temp=arr[i];
+            arr[i]=arr[n-i-1];
+            arr[n-i-1]=temp;
+    
+    }
+    
+    
+    // Print the array after swapping
+    printf("Array after swapping: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+42.Insert Target Element Based on Comparison
+
+#include <stdio.h>
+
+int main() {
+    int n, target, pos = 0; 
+    
+    printf("Enter array size: ");
+    scanf("%d", &n);
+    
+    int arr[n];
+    
+    printf("Enter array elements (sorted): ");
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("Enter target element: ");
+    scanf("%d", &target);
+    
+    // Find insertion position
+    for(int i = 0; i < n; i++) {
+        if(target < arr[i]) {
+            pos = i;
+            break;
+        }
+        pos = i + 1;
+    }
+    
+    // Shift elements to make space
+    for(int i = n; i > pos; i--) {
+        arr[i] = arr[i-1];
+    }
+    
+    // Insert target
+    arr[pos] = target;
+    n++;
+
+    // Print updated array
+    printf("Updated array: ");
+    for(int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    return 0;
+}
+
+
+43.Sort Half Array in ascending and remaining in descending
+
+#include <stdio.h>
+
+int main() {
+    int i, j, n;
+
+    // Get the number of elements in the array
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Get the elements of the array
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int half;
+    if (n % 2 == 0) {
+        half = (n / 2) - 1;
+    } else {
+        half = n / 2;
+    }
+
+    // Sort the first half in ascending order
+    for (i = 0; i <= half; i++) {
+        for (j = i + 1; j <= half; j++) {
+            if (arr[i] > arr[j]) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    // Sort the second half in descending order
+    for (i = half + 1; i < n; i++) {
+        for (j = i + 1; j < n; j++) {
+            if (arr[i] < arr[j]) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    // Print the final array
+    printf("Final array: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+44.sum of two elements equal to target print the indices
+
+#include <stdio.h>
+
+int main() {
+    int n,i,j;
+
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int target;
+    
+    scanf("%d",&target);
+    
+    for(int i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(target==arr[i]+arr[j]){
+                printf("[");
+                printf("%d,%d",i,j);
+                printf("]");
+                return 0;
+            }
+        }
+        
+    }
+    
+}
+
+
+45.Insert a sorted array and find adjacent elements
+
+#include <stdio.h>
+
+int main() {
+    int i, j, n, temp, fir = -1, last = -1, target, pos = 0; 
+    
+    printf("Enter array size: ");
+    scanf("%d", &n);
+    
+    int arr[n + 1]; // One extra space for the new element
+    
+    printf("Enter array elements (sorted): ");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("Enter target element: ");
+    scanf("%d", &target);
+    
+    // Find insertion position
+    for(i = 0; i < n; i++) {
+        if(target < arr[i]) {
+            pos = i;
+            break;
+        }
+        pos = i + 1;
+    }
+    
+    // Shift elements to make space
+    for(i = n; i > pos; i--) {
+        arr[i] = arr[i - 1];
+    }
+    
+    // Insert target
+    arr[pos] = target;
+    n++;
+    
+    // Sort the array (although it should already be sorted)
+    for(i = 0; i < n - 1; i++) {
+        for(j = i + 1; j < n; j++) {
+            if(arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    // Find the elements before and after the target
+    for(i = 0; i < n; i++) {
+        if(arr[i] == target) {
+            if(i > 0) {
+                fir = arr[i - 1];
+            }
+            if(i < n - 1) {
+                last = arr[i + 1];
+            }
+            break;
+        }
+    }
+
+    // Print results
+    if(fir == -1) {
+        printf("No element before the target\n");
+    } else {
+        printf("Element before the target: %d\n", fir);
+    }
+
+    if(last == -1) {
+        printf("No element after the target\n");
+    } else {
+        printf("Element after the target: %d\n", last);
+    }
+    
+    return 0;
+}
+
+

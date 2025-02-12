@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ScalerMatrix",
+            "request": "launch",
+            "mainClass": "ScalerMatrix",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "ProMatrix",
+            "request": "launch",
+            "mainClass": "ProMatrix",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
+            "name": "SubMatrix",
+            "request": "launch",
+            "mainClass": "SubMatrix",
+            "projectName": "Coffee_b24a66c5"
+        },
+        {
+            "type": "java",
             "name": "CuntDigits",
             "request": "launch",
             "mainClass": "CoffeeBeans.CuntDigits",

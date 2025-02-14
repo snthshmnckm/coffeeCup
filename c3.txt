@@ -391,7 +391,7 @@ int main() {
                 isEqual=false;
                 break;
             }
-        }
+        }       
         if(!isEqual){
             break;
         }
